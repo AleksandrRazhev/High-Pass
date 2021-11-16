@@ -1,0 +1,31 @@
+@import '../src/scss/_variables.scss';
+@import '../src/scss/_mixins.scss';
+
+.social-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+  
+  @media (max-width: 1024px) {
+    display: none;
+  }
+  
+  &__item {
+    font-size: 0;
+    
+    &-link {
+      @include svgStates;
+
+      &-img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+.header__social-list {
+  justify-self: end;
+  grid-template-columns: repeat(3, 30px);
+}

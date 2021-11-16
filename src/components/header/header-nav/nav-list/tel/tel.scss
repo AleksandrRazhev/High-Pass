@@ -1,0 +1,45 @@
+@import '../src/scss/_variables.scss';
+@import '../src/scss/_mixins.scss';
+
+.tel {
+
+  &__link {
+    display: flex;
+    position: relative;
+    align-items: center;
+    color: $colorStateBright;
+    outline: none;
+
+    &:focus {
+      color: $lightColor;
+
+      &::before {
+        position: absolute;
+        content: '';
+        z-index: -1;
+        top: -5px;
+        right: -5px;
+        bottom: -5px;
+        left: -5px;
+        background-color: $colorStateMedium;
+      }
+
+      .tel__img {
+        fill: $lightColor;
+      }
+    }
+    
+    .tel__img {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      fill: $colorStateBright;
+    }
+    
+    .tel__text {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.29em;
+    }
+  }
+}
