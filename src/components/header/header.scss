@@ -1,0 +1,101 @@
+@import '../src/scss/_variables.scss';
+
+.header {
+  background-color: $darkBack;
+  font-family: 'TTFirsNeue';
+
+  @media (max-width: 990px) {
+    position: relative;
+
+    &::before {
+      content: '';
+      top: +80px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      background-color: #4a4a4a;
+
+      @media (max-width: 600px) {
+        top: +70px;
+      }
+    }
+  }
+  
+  &__container {
+    display: grid;
+    grid-template-columns: minmax(auto, 280px) 1fr minmax(auto, 280px);
+    grid-template-rows: minmax(80px, auto);
+    align-items: center;
+    
+    @media (max-width: 990px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 80px minmax(45px, auto);
+      align-items: center;
+    }
+
+    @media (max-width: 600px) {
+      grid-template-rows: 70px minmax(45px, auto);
+    }    
+    
+    .logo {
+      font-size: 0;
+
+
+      &-link {
+        width: 190px;
+        height: 31px;
+        @media (max-width: 1024px) {
+          width: 166px;
+          height: 27px;
+        }
+        @media (max-width: 600px) {
+          width: 112px;
+          height: 18px;
+        }
+      }
+    }
+
+    @import 'burger/burger.scss';
+    @import 'header-nav/header-nav.scss';
+    @import 'social-list/social-list.scss';
+    @import 'search/search.scss';
+  }
+
+  
+  &.search-open {
+
+    #search-btn {
+      display: none;
+    }
+    
+    #search-form {
+      display: flex;
+    }
+  }
+
+  &.burger-open {
+    @media (max-width: 600px) {
+
+      .nav-list {
+      @include openVertical-modificator();
+        
+        &__item {
+          @include openVertical-modificator();
+        }
+
+        &__tel {
+          @include openVertical-modificator();
+        }
+      }
+
+      #burger {
+        display: none;
+      }
+      
+      #burger-close {
+        display: block;
+      }
+    }
+  }
+}

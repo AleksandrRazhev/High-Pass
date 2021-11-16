@@ -1,0 +1,54 @@
+@import '../src/scss/_variables.scss';
+@import '../src/scss/_mixins.scss';
+
+
+.burger-block {
+  display: none;
+
+  @media (max-width: 600px) {
+    display: block;
+  }
+
+  .burger {
+    display: block;
+    width: 20px;
+    height: 18px;
+    position: relative;
+    @include btnTransparent;
+  
+    @media (max-width: 600px) {
+      display: block;
+      @include burgerNav();
+    }
+  
+    &-top {
+      @include burgerPart();
+      width: 100%;
+      top: 0;
+    }
+  
+    &-middle {
+      @include burgerPart();
+      width: 100%;
+      top: calc(50% - (2 / 18 * 100%)/2);
+    }
+  
+    &-bottom {
+      @include burgerPart();
+      width: 50%;
+      bottom: 0;
+    }
+  }
+
+  #burger-close {
+    display: none;
+    position: relative;
+    @include btnTransparent;
+    @include svgStates;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

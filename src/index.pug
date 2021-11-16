@@ -1,0 +1,23 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title High Pass
+    link(rel="shortcut icon", href="images/favicon.ico")
+    link(rel="stylesheet", href="css/style.css")
+    link(rel="preload" href="fonts/TTFirsNeue-Regular.woff2" as="fonts")
+    link(rel="preload" href="fonts/Roboto-Regular.woff2" as="fonts")
+    script(defer src="app.js")
+  body
+    div.sprite
+      include ../dev/images/sprite.svg
+    include components/header/header.pug
+    main
+      - var sections = [{item: 'first'}, {item: 'about'}, {item: 'projects'}, {item: 'contacts'}]
+        each i in sections
+          section(class=`${i.item}`)
+            div.container(class=`${i.item}__container`)
+              h2(class=`${i.item}__title`)= `${i.item}`
+    include components/footer/footer.pug
