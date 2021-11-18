@@ -1,0 +1,16 @@
+.mark {
+  display: inline-block;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  padding: 0.428em 1em;
+  font-family: 'Roboto';
+  font-size: 14px;
+  line-height: 1.143em;
+  text-align: center;
+  color: $lightColor;
+  background-color: $darkBack2;
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
+}

@@ -9,6 +9,15 @@
   }
 }
 
+@mixin before($offset: 0) {
+  position: absolute;
+  content: '';
+  top: $offset;
+  right: $offset;
+  bottom: $offset;
+  left: $offset;
+}
+
 @mixin containerPaddings {
   padding-right: 55px;
   padding-left: 55px;

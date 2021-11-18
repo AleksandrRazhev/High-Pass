@@ -1,0 +1,15 @@
+.btn-close {
+  display: block;
+  @include btnTransparent;
+  @include svgStates;
+
+  svg {
+    width: 23px;
+    height: 23px;
+
+    @media (max-width: 600px) {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.btn-link {
+  display: inline-block;
+  padding: 0.938em 1.375em;
+  line-height: 1.188em;
+  font-family: 'Roboto';
+  font-weight: 700;
+  text-align: center;
+  color: $lightColor;
+  background-color: $colorStateBright;
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
+}

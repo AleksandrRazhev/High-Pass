@@ -1,0 +1,43 @@
+.card-mc {
+  display: flex;
+  position: relative;
+  z-index: 0;
+  flex-direction: column;
+  justify-content: end;
+  padding: 30px;
+  align-items: flex-start;
+}
+
+.card-mc__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.first__btn-link{
+}
+
+.card-mc__author {
+  margin-bottom: 3px;
+  font-family: 'Roboto';
+  line-height: 1.187em;
+  color: $lightColor;
+}
+
+.card-mc__title,
+.card-mc__date {
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 1.028em;
+  color: $lightColor;
+}
+
+.card-mc__date {
+  margin-bottom: 19px;
+}

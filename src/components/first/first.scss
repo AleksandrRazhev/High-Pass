@@ -1,0 +1,21 @@
+.first {
+  padding-top: 41px;
+  padding-bottom: 68px;
+  background-color: $lightColor2;
+}
+
+.first__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1em;
+}
+
+.first__card-mc {
+  min-height: 630px;
+}
+
+.first__card-mc:nth-child(1) {
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+}

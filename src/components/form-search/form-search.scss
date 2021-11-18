@@ -1,0 +1,43 @@
+.form-search {
+  display: none;
+  width: 343px;
+  position: absolute;
+  top: calc(80px/2 - 30px/2);
+  right: 0;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+
+  @include containerPaddings();
+  
+  input {
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1.4em;
+    color: $gray2;
+    border-bottom: 1px solid $gray2;
+    background-color: $darkBack;
+    outline: none;
+    transition: border-color .6s ease-in-out;
+    @media (max-width: 600px) {
+      font-size: 0.875rem;
+      line-height: 1.285em;
+      
+    }
+    
+    &:hover,
+    &:focus {
+      border-color: $colorStateBright;
+    }
+
+    &:active {
+      border-color: $colorStateDark;
+    }
+
+    ::placeholder {
+      color: $lightColor;
+      background-color: $darkBack;
+    }
+  }
+}
