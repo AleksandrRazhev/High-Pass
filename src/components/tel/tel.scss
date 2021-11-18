@@ -1,5 +1,4 @@
-@import '../src/scss/_variables.scss';
-@import '../src/scss/_mixins.scss';
+$telTransition: .6s ease-in-out;
 
 .tel {
 
@@ -9,18 +8,23 @@
     align-items: center;
     color: $colorStateBright;
     outline: none;
+    transition: color $telTransition;
+
+    &::before {
+      position: absolute;
+      content: '';
+      z-index: -1;
+      top: -5px;
+      right: -5px;
+      bottom: -5px;
+      left: -5px;
+      transition: background-color $telTransition;
+    }    
 
     &:focus {
       color: $lightColor;
 
       &::before {
-        position: absolute;
-        content: '';
-        z-index: -1;
-        top: -5px;
-        right: -5px;
-        bottom: -5px;
-        left: -5px;
         background-color: $colorStateMedium;
       }
 
@@ -34,6 +38,7 @@
       width: 15px;
       height: 15px;
       fill: $colorStateBright;
+      transition: fill $telTransition;
     }
     
     .tel__text {

@@ -15,7 +15,8 @@ html(lang="ru")
       include ../dev/images/sprite.svg
     include components/header/header.pug
     main
-      - var sections = [{item: 'first'}, {item: 'about'}, {item: 'projects'}, {item: 'contacts'}]
+      include components/first/first.pug
+      - var sections = [{item: 'about'}, {item: 'projects'}, {item: 'contacts'}]
         each i in sections
           section(class=`${i.item}`)
             div.container(class=`${i.item}__container`)

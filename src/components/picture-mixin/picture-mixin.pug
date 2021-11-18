@@ -1,0 +1,7 @@
+mixin picture(img)
+ picture
+  source(srcset=img.size320 type="image/webp" media="(max-width: 320px)")
+  source(srcset=img.size768 type="image/webp" media="(max-width: 768px)")
+  source(srcset=img.size1024 type="image/webp" media="(max-width: 1024px)")
+  source(srcset=img.desktop type="image/webp" media="(min-width: 1024px)")
+  img(class=classParent + '__img' src=img.defaultImg alt=img.description)

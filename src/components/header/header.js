@@ -1,11 +1,13 @@
 "use strict";
 
 const header = document.querySelector('.header'),
-  btnSearch = document.querySelector('#search-btn'),
-  btnSearchClose = document.querySelector('#search-btn-close'),
-  input = document.querySelector('#search-form').querySelector('input'),
-  btnBurger = document.querySelector('#burger'),
-  btnBurgerClose = document.querySelector('#burger-close');
+  headerSearch = document.querySelector('.header__search'),
+  btnSearch = headerSearch.querySelector('.btn-search'),
+  btnSearchClose = headerSearch.querySelector('.btn-close'),
+  input = headerSearch.querySelector('.form-search').querySelector('input'),
+  headerBurger = document.querySelector('.header__burger'),
+  btnBurger = headerBurger.querySelector('.burger'),
+  btnBurgerClose = headerBurger.querySelector('.btn-close');
 
 const openSearch = () => {
   btnSearch.addEventListener('click', () => {

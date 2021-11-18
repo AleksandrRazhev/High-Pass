@@ -1,0 +1,8 @@
+- var sectionName = 'first'
+  section(class = sectionName)
+    div(class= sectionName + '__container').container
+      include ../card-mc/card-mc.pug
+      - var cardMcData = {mark: 'мастеркласс', author: 'Мастер-класс от Игоря Робова', title: 'Неоновый фотосет 2.0', date: '7 июля 20:00'}
+      - var link = {href: '#', text: 'Узнать больше'}
+      - var img = {defaultImg: 'images/card_mc_desktop.jpg', desktop: 'images/card_mc_desktop.webp', size1024: 'images/card_mc_1024.webp', size768: 'images/card_mc_768.webp', size320: 'images/card_mc_320.webp', description: 'картинка'}
+        +cardMc(cardMcData, link, img)

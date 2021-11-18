@@ -1,0 +1,14 @@
+.btn-search {
+  @include btnTransparent;
+  @include svgStates;
+
+  svg {
+    width: 25px;
+    height: 25px;
+
+    @media (max-width: 600px) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

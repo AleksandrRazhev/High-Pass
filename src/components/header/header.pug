@@ -1,9 +1,7 @@
 header.header
   .container.header__container
-    a.logo(href="#") 
-      svg.logo-link
-        use(xlink:href="#logo")
-    include header-nav/header-nav.pug
-    include social-list/social-list.pug
-    include search/search.pug
-    include burger/burger.pug
+    include ../header__logo/header__logo.pug
+    include ../header__nav/header__nav.pug
+    include ../social-list/social-list.pug
+    include ../header__search/header__search.pug
+    include ../header__burger/header__burger.pug

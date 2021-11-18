@@ -1,6 +1,3 @@
-@import '../src/scss/_variables.scss';
-@import '../src/scss/_mixins.scss';
-
 .nav-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -65,7 +62,6 @@
     }
   }
   
-  @import 'tel/tel.scss';
   &__tel {
     display: none;
     flex-grow: 1;

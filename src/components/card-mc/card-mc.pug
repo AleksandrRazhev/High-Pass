@@ -1,0 +1,12 @@
+mixin cardMc(cardMcData, link, img)
+  - var classParent = 'card-mc'
+    article(class = [sectionName + '__' + classParent, classParent])
+      include ../mark/mark.pug
+      +mark(cardMcData.mark)
+      p(class = classParent + '__author')= cardMcData.author
+      h3(class = classParent + '__title')= cardMcData.title
+      p(class = classParent + '__date')= cardMcData.date
+      include ../btn-link/btn-link.pug
+      +btnLink(link)
+      include ../picture-mixin/picture-mixin.pug
+      +picture(img)

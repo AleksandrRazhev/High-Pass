@@ -1,6 +1,87 @@
-@import '../src/scss/_variables.scss';
-
 .footer {
-  color: $lightColor;
+  position: relative;
+  z-index: 0;
+  font-family: 'Roboto';
+  color: $gray;
   background-color: $darkBack;
+  @media (max-width: 600px) {
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 123px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: $gray4;
+    }
+  }
+
+  &__container {
+    display: grid;
+    min-height: 106px;
+    grid-template-columns: max(263px) 1fr max(161px);
+    align-items: center;
+
+    @media (max-width: 990px) {
+      grid-template-columns: 1fr max(161px);
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 123px 62px;
+      justify-items: center;
+    }
+  }
+
+  &__logo {
+    font-family: 'TTFirsNeue';
+
+    @media (max-width: 600px) {
+      text-align: center;
+    }
+  }
+
+  &__logo-text {
+    display: block;
+    font-size: 0.875rem;
+    line-height: 1.285em;
+  }
+
+  &__description {
+    justify-self: center;
+
+    @media (max-width: 990px) {
+      display: none;
+    }
+  }
+  
+  &__description-text {
+    display: block;
+  }
+
+  &__description-author {
+    display: block;
+    color: $grayDark;
+  }
+
+  &__social {
+    @media (max-width: 600px) {
+      order: -1;
+    }
+  }
+
+  &__social-block {
+    max-width: 161px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .social-list {
+    gap: 0;
+  }
 }
+
+
+
