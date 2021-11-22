@@ -1,13 +1,13 @@
-footer.footer
-  .container.footer__container
-    .footer__logo
++b.FOOTER.footer
+  +e.container.container
+    +e.logo
       include ../logo/logo.pug
-      span.footer__logo-text Фотостудия High pass® 2018-2020
-    .footer__description
-      span.footer__description-text Которая из моих фотографий самая любимая?
-      span.footer__description-text Та, которую я собираюсь снять завтра.
-      span.footer__description-author © Имоджен Каннингем
-    .footer__social
-      .footer__social-block
-        span.footer__social-text Больше интересного:
+      +e.SPAN.logo-text Фотостудия High pass® 2018-2020
+    +e.description
+      +e.SPAN.description-text Которая из моих фотографий самая любимая?
+      +e.SPAN.description-text Та, которую я собираюсь снять завтра.
+      +e.SPAN.description-author © Имоджен Каннингем
+    +e.social
+      +e.social-block
+        +e.SPAN.social-text Больше интересного:
         include ../social-list/social-list.pug

@@ -4,23 +4,22 @@
   z-index: 0;
   flex-direction: column;
   justify-content: end;
-  padding: 30px;
+  padding: 60px;
   align-items: flex-start;
+  @media (max-width: 1024px) {
+    padding: 30px;
+  }
 }
 
-.card-mc__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+.card-mc__mark {
+  top: 17px;
+  right: 17px;
 }
 
-.first__btn-link{
+.card-mc__picture {
+  .picture__img {
+    z-index: -1;
+    }
 }
 
 .card-mc__author {
@@ -28,6 +27,9 @@
   font-family: 'Roboto';
   line-height: 1.187em;
   color: $lightColor;
+  @media (max-width: 600px) {
+    font-size: 0.875rem;
+  }
 }
 
 .card-mc__title,
@@ -36,8 +38,16 @@
   font-size: 2.25rem;
   line-height: 1.028em;
   color: $lightColor;
+  @media (max-width: 1024px) {
+    font-size: 2.125rem;
+  }
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+  @media (max-width: 600px) {
+  }
 }
 
 .card-mc__date {
-  margin-bottom: 19px;
+  margin-bottom: 0.555em;
 }

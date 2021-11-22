@@ -1,6 +1,6 @@
 - var nav = [{item: 'О студии'}, {item: 'Наши проекты'}, {item: 'Услуги'}, {item: 'Мастер-классы'}, {item: 'Контакты'}]
-  ul.nav-list
+  +b.UL.nav-list
     each i in nav
-      li.nav-list__item
-        a.nav-list__item-link(href="")= i.item
+      +e.LI.item
+        +e.A.item-link(href="")= i.item
     include ../tel/tel.pug

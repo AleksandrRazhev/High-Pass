@@ -21,11 +21,19 @@ const closeSearch = () => {
 };
 
 const openBurger = () => {
-  btnBurger.addEventListener('click', () => header.classList.add('burger-open'));
+  btnBurger.addEventListener('click', () => {
+    header.classList.add('burger-open');
+    header.classList.add('burger-visible');
+  });
 };
 
 const closeBurger = () => {
-  btnBurgerClose.addEventListener('click', () => header.classList.remove('burger-open'));
+  btnBurgerClose.addEventListener('click', () => {
+    header.classList.remove('burger-open');
+    setTimeout (( () => {
+      header.classList.remove('burger-visible');
+    }), 600);
+  });
 };
 
 openSearch();

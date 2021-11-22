@@ -10,19 +10,19 @@
     @include burgerNav();
   }
 
-  &-top {
+  &__top {
     @include burgerPart();
     width: 100%;
     top: 0;
   }
 
-  &-middle {
+  &__middle {
     @include burgerPart();
     width: 100%;
     top: calc(50% - (2 / 18 * 100%)/2);
   }
 
-  &-bottom {
+  &__bottom {
     @include burgerPart();
     width: 50%;
     bottom: 0;
