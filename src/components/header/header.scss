@@ -88,4 +88,12 @@
       }
     }
   }
+
+  &.burger-visible {
+    @media (max-width: 600px) {
+      .nav-list {
+      opacity: 1;
+      }
+    }
+  }
 }

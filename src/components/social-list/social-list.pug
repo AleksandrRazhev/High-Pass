@@ -1,7 +1,7 @@
 - var socialList = [{item: '#instagram'}, {item: '#fb'}, {item: '#vk'}]
-    ul.social-list
+    +e.UL.social-list.social-list__
       each item in socialList
-        li.social-list__item
-          a.social-list__item-link(href="#")
-            svg.social-list__item-link-img
+        +e.LI.item
+          +e.A.item-link(href="#")
+            +e.SVG.item-link-img
               use(xlink:href=item.item)

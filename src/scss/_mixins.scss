@@ -87,7 +87,7 @@
   transform-origin: 0 0;
   transform: scaleY(0);
   opacity: $opacity;
-  transition-property: transform, opacity;
+  transition-property: transform;
   transition-duration: $duration;
   transition-timing-function: ease-in-out;
 }
