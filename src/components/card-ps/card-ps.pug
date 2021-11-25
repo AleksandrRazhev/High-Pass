@@ -1,0 +1,6 @@
+mixin cardPs(data)
+  +e.ARTICLE.card-ps.card-ps__
+    include ../mark/mark.pug
+    +mark(data.mark)
+    +e.P.text(data.text)
+    +e.SPAN.date

@@ -10,6 +10,7 @@ html(lang="ru")
     link(rel="stylesheet", href="css/style.css")
     link(rel="preload" href="fonts/TTFirsNeue-Regular.woff2" as="fonts")
     link(rel="preload" href="fonts/Roboto-Regular.woff2" as="fonts")
+    script(defer src="resources/just-validate.min.js")
     script(defer src="app.js")
   body
     div.sprite
@@ -17,9 +18,12 @@ html(lang="ru")
     include components/header/header.pug
     main
       include components/first/first.pug
-      - var sections = [{item: 'about'}, {item: 'projects'}, {item: 'contacts'}]
+      include components/about/about.pug
+      include components/projects/projects.pug
+      - var sections = [{item: 'contacts'}]
         each i in sections
           section(class=`${i.item}`)
             div.container(class=`${i.item}__container`)
               h2(class=`${i.item}__title`)= `${i.item}`
     include components/footer/footer.pug
+    

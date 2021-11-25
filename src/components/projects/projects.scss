@@ -1,0 +1,14 @@
+.projects {
+
+  &__container {
+    padding-top: 68px;
+    padding-bottom: 34px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 300px 300px;
+    gap: 30px;
+  }
+}
