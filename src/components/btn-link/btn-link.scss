@@ -7,7 +7,25 @@
   text-align: center;
   color: $lightColor;
   background-color: $colorStateBright;
+  border: 3px solid transparent;
+  outline: none;
   @media (max-width: 600px) {
     font-size: 14px;
+  }
+  transition-property: background-color, border-color;
+  transition-duration: .6s;
+  transition-timing-function: ease-in-out;
+
+  &:hover {
+    background-color: $colorStateMedium;
+  }
+
+  &:focus {
+    border-color: $colorStateDark;
+  }
+
+  &:active {
+    background-color: $colorStateDark;
+    border-color: $colorStateDark;
   }
 }
