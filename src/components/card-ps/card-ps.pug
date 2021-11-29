@@ -1,6 +1,12 @@
-mixin cardPs(data)
+mixin cardPs(data, img)
   +e.ARTICLE.card-ps.card-ps__
+    h3.visually-hidden= data.mark
+    include ../picture-mixin/picture-mixin.pug
+    +picture(img)
     include ../mark/mark.pug
     +mark(data.mark)
-    +e.P.text(data.text)
-    +e.SPAN.date
+    +e.P.text= data.text
+    +e.date-block
+      +e.SVG.date-img
+        use(xlink:href="#card-ps-date")
+      +e.SPAN.date= data.date

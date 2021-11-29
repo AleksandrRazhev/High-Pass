@@ -1,0 +1,58 @@
+.request {
+  display: flex;
+  max-width: 466px;
+  flex-direction: column;
+
+  &__title {
+    margin-bottom: 0.208em;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1em;
+    color: $darkBack;
+    @media (max-width: 600px) {
+      font-size: 1.125em;
+    }
+  }
+
+  &__lable {
+    margin-bottom: 0.875em;
+    font-family: 'Roboto';
+    font-size: 1rem;
+    line-height: 1.375em;
+    color: $gray5;
+    @media (max-width: 600px) {
+      font-size: 0.875rem;
+      line-height: 1.286em;
+    }
+  }
+
+  &__name-block,
+  &__email-block {
+    position: relative;
+  }
+  
+  &__name {
+    @include inputsRequest;
+  }
+
+  &__email {
+    @include inputsRequest;
+  }
+
+  &__comment {
+    flex-grow: 1;
+    @include inputsRequest;
+  }
+
+  &__button {
+    display: inline-block;
+    align-self: start;
+    cursor: pointer;
+  }
+
+  .js-validate-error-label {
+    @include validateError;
+    top: 5px;
+    left: 24px;
+  }
+}

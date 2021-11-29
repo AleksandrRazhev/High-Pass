@@ -11,8 +11,10 @@ html(lang="ru")
     link(rel="preload" href="fonts/TTFirsNeue-Regular.woff2" as="fonts")
     link(rel="preload" href="fonts/Roboto-Regular.woff2" as="fonts")
     script(defer src="resources/just-validate.min.js")
+    script(defer src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU")
     script(defer src="app.js")
   body
+    h1.visually-hidden фотостудия High pass
     div.sprite
       include ../dev/images/sprite.svg
     include components/header/header.pug
@@ -20,10 +22,6 @@ html(lang="ru")
       include components/first/first.pug
       include components/about/about.pug
       include components/projects/projects.pug
-      - var sections = [{item: 'contacts'}]
-        each i in sections
-          section(class=`${i.item}`)
-            div.container(class=`${i.item}__container`)
-              h2(class=`${i.item}__title`)= `${i.item}`
+      include components/contacts/contacts.pug
     include components/footer/footer.pug
     

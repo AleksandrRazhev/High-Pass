@@ -1,0 +1,9 @@
++e.FORM.request.request__(name="request-form" method="POST" action="https://jsonplaceholder.typicode.com/posts")
+  +e.H3.title Оставить заявку
+  +e.LABEL.lable(for="comment") Оставьте ваши данные, указав в графе “Комментарий” желаемые время и дату съемки или другого мероприятия
+  +e.name-block
+    +e.INPUT.name(type="text" name="name" required placeholder="Имя" data-validate-field="name")
+  +e.email-block
+    +e.INPUT.email(type="email" name="email" required placeholder="E-mail" data-validate-field="email")
+  +e.TEXTAREA.comment(name="comment" id="comment" placeholder="Комментарий")
+  +e.BUTTON.button.btn-link(type="submit") Отправить

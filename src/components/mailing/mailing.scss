@@ -1,7 +1,6 @@
 .mailing {
   display: flex;
   align-items: end;
-  position: relative;
   @media (max-width: 1024px) {
     flex-direction: column;
     align-items: start;
@@ -27,6 +26,10 @@
     @media (max-width: 600px) {
       font-size: 1.125rem;
     }
+  }
+
+  &__email-block {
+    position: relative;
   }
 
   &__input {
@@ -61,18 +64,9 @@
   }
 
   .js-validate-error-label {
-    position: absolute;
-    bottom: 35px;
-    left: 25px;
-    font-size: 0.562rem;
-    line-height: 1.222em;
-    color: #F06666;
-    @media (max-width: 1024px) {
-      bottom: 105px;
-    }
-    @media (max-width: 600px) {
-      bottom: 91px;
-    }
+    @include validateError;
+    top: 3px;
+    left: 22px;
   }
 
   &__button {

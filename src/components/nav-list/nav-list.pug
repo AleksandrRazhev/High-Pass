@@ -3,4 +3,5 @@
     each i in nav
       +e.LI.item
         +e.A.item-link(href="")= i.item
-    include ../tel/tel.pug
+    +e.LI.tel.tel__
+      include ../tel/tel.pug
