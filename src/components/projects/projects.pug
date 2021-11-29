@@ -3,6 +3,18 @@
     +e.H2.title.section-title Наши проекты
     +e.grid
       include ../card-ps/card-ps.pug
-      - var cardPs1 = {picture: '', mark: 'пейзаж', text: '', date: ''}
-      +cardPs(cardPs1)
+      - var cardPs1 = {data: {mark: 'пейзаж', text: 'Синтетически, смешаны с не уникальными данными до степени (здесьдолжнобытьмноготочие)', date: '16 июня'}, img: {defaultImg: 'images/card-ps1_desktop.jpg', desktop: 'images/card-ps1_desktop.webp', size1024: 'images/card-ps1_1024.webp', size768: 'images/card-ps1_768.webp', size320: 'images/card-ps1_320.webp', description: 'card-ps1'}}
+      - var cardPs2 = {data: {mark: 'портрет', text: 'В своём стремлении улучшить опыт мы упускаем, что явные (здесьдолжнобытьмноготочие)', date: '16 июня'}, img: {defaultImg: 'images/card-ps2_desktop.jpg', desktop: 'images/card-ps2_desktop.webp', size1024: 'images/card-ps2_1024.webp', size768: 'images/card-ps2_768.webp', size320: 'images/card-ps2_320.webp', description: 'card-ps2'}}
+      - var cardPs3 = {data: {mark: 'предмет', text: 'Равным образом, высокое качество позиционных высокотехнологичная концепция общественного уклада (здесьдолжнобытьмноготочие)', date: '14 мая'}, img: {defaultImg: 'images/card-ps3_desktop.jpg', desktop: 'images/card-ps3_desktop.webp', size1024: 'images/card-ps3_1024.webp', size768: 'images/card-ps3_768.webp', size320: 'images/card-ps3_320.webp', description: 'card-ps3'}}
+      - var cardPs4 = {data: {mark: 'ретушь', text: 'Как принято считать, многие известные личности и по сей день остаются уделом либералов (здесьдолжнобытьмноготочие)', date: '9 марта'}, img: {defaultImg: 'images/card-ps4_desktop.jpg', desktop: 'images/card-ps4_desktop.webp', size1024: 'images/card-ps4_1024.webp', size768: 'images/card-ps4_768.webp', size320: 'images/card-ps4_320.webp', description: 'card-ps4'}}
+       - var cardPs5 = {data: {mark: 'портрет', text: 'С учётом сложившейся международной обстановки, новая модель организационной (здесьдолжнобытьмноготочие)', date: '1 марта'}, img: {defaultImg: 'images/card-ps5_desktop.jpg', desktop: 'images/card-ps5_desktop.webp', size1024: 'images/card-ps5_1024.webp', size768: 'images/card-ps5_768.webp', size320: 'images/card-ps5_320.webp', description: 'card-ps5'}}
+      - var cardsPs = [cardPs1, cardPs2, cardPs3, cardPs4, cardPs5]
+        each i in cardsPs
+          +cardPs(i.data, i.img)
+      include ../card-pb/card-pb.pug
+      - var cardPb1 = {data: {mark: 'fuji', title: 'Cемантический разбор', text: 'В рамках спецификации современных стандартов, интерактивные прототипы', date: '9 апреля'}, img: {defaultImg: 'images/card-pb1_desktop.jpg', desktop: 'images/card-pb1_desktop.webp', size1024: 'images/card-pb1_1024.webp', size768: 'images/card-pb1_768.webp', size320: 'images/card-pb1_320.webp', description: 'card-pb1'}, link: {text: 'О проекте', href: '#'}}
+      - var cardPb2 = {data: {mark: 'проектзабвение', title: 'Забвение', text: 'Играет важную роль в формировании глубокомысленных рассуждений', date: '20 марта'}, img: {defaultImg: 'images/card-pb2_desktop.jpg', desktop: 'images/card-pb2_desktop.webp', size1024: 'images/card-pb2_1024.webp', size768: 'images/card-pb2_768.webp', size320: 'images/card-pb2_320.webp', description: 'card-pb2'}, link: {text: 'О проекте', href: '#'}}
+      - var cardsPb = [cardPb1, cardPb2]
+        each i in cardsPb
+          +cardPb(i.data, i.img, i.link)
       

@@ -1,0 +1,15 @@
+mixin cardPb(data, img, link)
+  +e.ARTICLE.card-pb.card-pb__
+    include ../picture-mixin/picture-mixin.pug
+    +picture(img)
+    include ../mark/mark.pug
+    +e.date-block
+      +e.SVG.date-img
+        use(xlink:href="#card-ps-date")
+      +e.SPAN.date= data.date
+    +mark(data.mark)
+    +e.H3.title= data.title
+    +e.P.text= data.text
+    +e.link-block
+      include ../btn-link2/btn-link2.pug
+      +btn-link2(link)

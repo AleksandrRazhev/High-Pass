@@ -19,22 +19,22 @@
 }
 
 @mixin containerPaddings {
-  padding-right: 55px;
-  padding-left: 55px;
+  padding-right: $containerPadding;
+  padding-left: $containerPadding;
 
   @media (max-width: 1024px) {
-    padding-right: 30px;
-    padding-left: 30px;
+    padding-right: $containerPadding1024;
+    padding-left: $containerPadding1024;
   }
 
   @media (max-width: 768px) {
-    padding-right: 27px;
-    padding-left: 27px;
+    padding-right: $containerPadding768;
+    padding-left: $containerPadding768;
   }
 
   @media (max-width: 320px) {
-    padding-right: 21px;
-    padding-left: 21px;
+    padding-right: $containerPadding320;
+    padding-left: $containerPadding320;
   }
 }
 
@@ -95,4 +95,44 @@
 @mixin openVertical-modificator() {
   opacity: 1;
   transform: scaleY(100%);
+}
+
+@mixin inputsRequest {
+  width: 100%;
+  min-height: 50px;
+  margin-bottom: 1.25em;
+  padding: 0.96875em 1.4375em;
+  font-size: 1rem;
+  line-height: 1.1875em;
+  font-family: 'Roboto';
+  color: $darkBack;
+  background-color: $gray2;
+  border: 1px solid transparent;
+  outline: none;
+  transition: border-color .6s ease-in-out;
+  @media (max-width: 600px) {
+    font-size: 0.875rem;
+    line-height: 1.142em;
+  }
+  &::placeholder {
+    color: $gray5;
+    transition: color .6s ease-in-out;
+  }
+  &:hover {
+    &::placeholder {
+      color: $colorStateBright;
+    }
+  }
+  &:focus {
+    border-color: $colorStateBright;
+  }
+}
+
+@mixin validateError {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 0.562rem;
+  line-height: 1.222em;
+  color: #F06666;
 }

@@ -1,0 +1,65 @@
+.card-pb {
+  display: flex;
+  padding: 1.875em;
+  font-size: 1rem;
+  position: relative;
+  flex-direction: column;
+  font-family: 'Roboto';
+  color: $lightColor;
+  
+  &__picture {
+    .picture__img {
+      z-index: -1;
+    }
+  }
+  
+  &__mark {
+    top: 7px;
+    right: 7px;
+  }
+  
+  &__date-block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.125em;
+  }
+  
+  &__date-img {
+    width: 0.875em;
+    height: 0.875em;
+    padding: 0.0365625em 0.073em;
+    margin-right: 0.3125em;
+    fill: $lightColor;
+  }
+  
+  &__date {
+    font-size: 0.75em;
+    line-height: 1.833em;
+  }
+  
+  &__title {
+    font-family: 'TTFirsNeue';
+    font-weight: 700;
+    font-size: 1.5em;
+    margin-bottom: 0.208em;
+  }
+  
+  &__text {
+    font-size: 1em;
+    line-height: 1.375em;
+    @media (max-width: 600px) {
+      font-size: 0.875em;
+    }
+  }
+  
+  &__link-block {
+    flex-grow: 1;
+    display: flex;
+    align-items: end;
+  }
+  
+  &__btn-link2 {
+    display: inline-block;
+  }
+
+}
