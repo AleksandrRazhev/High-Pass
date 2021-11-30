@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Pass</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" href="fonts/TTFirsNeue-Regular.woff2" as="fonts">
+    <link rel="preload" href="fonts/Roboto-Regular.woff2" as="fonts">
+    <script defer src="resources/just-validate.min.js"></script>
+    <script defer src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&amp;lang=ru_RU"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <h1 class="visually-hidden">фотостудия High pass</h1>
+    <div class="sprite"><?xml version="1.0" encoding="utf-8"?><svg viewBox="0 0 191 31" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style>:root>svg{display:none}:root>svg:target{display:block}</style><svg viewBox="0 0 12 14" id="card-ps-date" xmlns="http://www.w3.org/2000/svg"><path d="M10.667 1.75h-.584V.583H8.917V1.75H3.083V.583H1.917V1.75h-.584A1.17 1.17 0 00.167 2.917v9.333a1.17 1.17 0 001.166 1.167h9.334a1.17 1.17 0 001.166-1.167V2.917a1.17 1.17 0 00-1.166-1.167zm0 10.5H1.333V4.667h9.334v7.583z"/></svg><svg viewBox="0 0 23 23" id="close" xmlns="http://www.w3.org/2000/svg"><circle cx="11.5" cy="11.5" r="11.5"/><path fill="#fff" d="M7.138 6.325l9.758 9.758-.813.813-9.758-9.758z"/><path fill="#fff" d="M6.43 16.083l9.758-9.758.813.813-9.758 9.758z"/></svg><svg viewBox="0 0 30 30" id="fb" xmlns="http://www.w3.org/2000/svg"><path d="M15 0C6.75 0 0 6.762 0 15.09 0 22.62 5.49 28.87 12.66 30V19.458H8.85V15.09h3.81v-3.328c0-3.78 2.235-5.858 5.67-5.858 1.635 0 3.345.286 3.345.286v3.72h-1.89c-1.86 0-2.445 1.16-2.445 2.349v2.831h4.17l-.675 4.368H17.34V30a14.985 14.985 0 009.075-5.105A15.097 15.097 0 0030 15.09C30 6.762 23.25 0 15 0z"/></svg><svg viewBox="0 0 30 30" id="instagram" xmlns="http://www.w3.org/2000/svg"><path d="M12.129 15a2.871 2.871 0 105.742 0 2.871 2.871 0 00-5.742 0z"/><path d="M8.286 9.92c.138-.374.358-.712.644-.99.278-.286.616-.507.99-.645.304-.118.76-.258 1.6-.296.908-.041 1.18-.05 3.48-.05s2.573.008 3.48.05c.84.038 1.297.178 1.6.296.374.138.713.359.99.645.286.278.506.616.645.99.118.303.258.76.296 1.6.042.908.05 1.18.05 3.48s-.008 2.572-.05 3.48c-.038.84-.178 1.296-.296 1.6a2.67 2.67 0 01-.645.99 2.667 2.667 0 01-.99.645c-.303.118-.76.258-1.6.296-.907.042-1.18.05-3.48.05s-2.572-.008-3.48-.05c-.84-.038-1.296-.178-1.6-.296a2.852 2.852 0 01-1.634-1.635c-.118-.304-.259-.76-.297-1.6-.041-.908-.05-1.18-.05-3.48s.009-2.572.05-3.48c.038-.84.178-1.296.297-1.6zM15 19.423a4.423 4.423 0 100-8.846 4.423 4.423 0 000 8.846zm-4.598-7.987a1.034 1.034 0 100-2.068 1.034 1.034 0 000 2.068z"/><path d="M15 0c8.283 0 15 6.717 15 15 0 8.283-6.717 15-15 15-8.283 0-15-6.717-15-15C0 6.717 6.717 0 15 0zM6.439 18.551c.041.917.187 1.543.4 2.09a4.404 4.404 0 002.52 2.52c.547.213 1.173.358 2.09.4.918.042 1.212.052 3.55.052 2.34 0 2.633-.01 3.552-.052.917-.042 1.543-.187 2.09-.4a4.22 4.22 0 001.526-.994c.438-.43.777-.95.994-1.525.213-.548.358-1.174.4-2.09.042-.92.052-1.213.052-3.552 0-2.34-.01-2.633-.052-3.551-.041-.917-.187-1.543-.4-2.09a4.22 4.22 0 00-.994-1.526 4.218 4.218 0 00-1.525-.994c-.548-.213-1.174-.358-2.09-.4-.92-.042-1.213-.052-3.552-.052-2.34 0-2.633.01-3.551.052-.917.042-1.543.187-2.09.4a4.222 4.222 0 00-1.527.994 4.22 4.22 0 00-.993 1.525c-.213.548-.359 1.174-.4 2.09-.042.92-.052 1.213-.052 3.552 0 2.34.01 2.633.052 3.551z"/></svg><svg fill="none" viewBox="0 0 191 31" id="logo" xmlns="http://www.w3.org/2000/svg"><path d="M43 25V4h5.55v7.8h8.1V4h5.55v21h-5.55v-8.1h-8.1V25H43zM65.486 5.2c0-.72.27-1.32.81-1.8.54-.5 1.22-.75 2.04-.75.82 0 1.5.25 2.04.75.54.48.81 1.08.81 1.8 0 .7-.27 1.3-.81 1.8s-1.22.75-2.04.75c-.82 0-1.5-.25-2.04-.75s-.81-1.1-.81-1.8zm.3 19.8V9.4h5.1V25h-5.1zM75.454 22.63c-1.34-1.48-2.01-3.39-2.01-5.73 0-2.34.67-4.25 2.01-5.73 1.34-1.48 2.97-2.22 4.89-2.22 1.38 0 2.57.4 3.57 1.2.46.36.82.76 1.08 1.2h.3V9.4h5.1v21.3h-14.85v-4.05h9.75V22.6h-.3c-.28.44-.64.82-1.08 1.14-.98.74-2.17 1.11-3.57 1.11-1.92 0-3.55-.74-4.89-2.22zm4.14-8.37c-.6.64-.9 1.52-.9 2.64s.3 2 .9 2.64c.6.64 1.4.96 2.4.96s1.8-.32 2.4-.96c.6-.64.9-1.52.9-2.64s-.3-2-.9-2.64c-.6-.64-1.4-.96-2.4-.96s-1.8.32-2.4.96zM93.38 25V4h5.1v7.5h.3c.28-.48.64-.9 1.08-1.26 1.02-.86 2.21-1.29 3.57-1.29 1.84 0 3.27.56 4.29 1.68 1.04 1.1 1.56 2.69 1.56 4.77V25h-5.1v-8.85c0-.9-.24-1.6-.72-2.1s-1.14-.75-1.98-.75c-.86 0-1.58.32-2.16.96-.56.62-.84 1.45-.84 2.49V25h-5.1zM120.538 30.7V9.4h5.1v2.1h.3c.28-.46.66-.88 1.14-1.26 1.1-.86 2.27-1.29 3.51-1.29 1.92 0 3.55.76 4.89 2.28 1.34 1.5 2.01 3.49 2.01 5.97 0 2.48-.67 4.48-2.01 6-1.34 1.5-2.97 2.25-4.89 2.25-1.26 0-2.43-.42-3.51-1.26a4.61 4.61 0 01-1.14-1.29h-.3v7.8h-5.1zm6-16.38c-.6.68-.9 1.64-.9 2.88s.3 2.2.9 2.88c.6.68 1.4 1.02 2.4 1.02s1.8-.34 2.4-1.02c.6-.68.9-1.64.9-2.88s-.3-2.2-.9-2.88c-.6-.68-1.4-1.02-2.4-1.02s-1.8.34-2.4 1.02zM141.284 23.2c-1.34-1.52-2.01-3.52-2.01-6s.67-4.47 2.01-5.97c1.34-1.52 2.97-2.28 4.89-2.28 1.24 0 2.41.43 3.51 1.29.46.38.84.8 1.14 1.26h.3V9.4h5.1V25h-5.1v-2.1h-.3c-.28.48-.66.91-1.14 1.29-1.08.84-2.25 1.26-3.51 1.26-1.92 0-3.55-.75-4.89-2.25zm4.14-8.88c-.6.68-.9 1.64-.9 2.88s.3 2.2.9 2.88c.6.68 1.4 1.02 2.4 1.02s1.8-.34 2.4-1.02c.6-.68.9-1.64.9-2.88s-.3-2.2-.9-2.88c-.6-.68-1.4-1.02-2.4-1.02s-1.8.34-2.4 1.02zM158.31 19.9h5.1c.08.3.25.58.51.84.54.54 1.32.81 2.34.81 1.4 0 2.1-.35 2.1-1.05 0-.32-.2-.57-.6-.75-.4-.2-1-.4-1.8-.6-.66-.16-1.09-.26-1.29-.3-.2-.04-.62-.15-1.26-.33-.64-.2-1.1-.37-1.38-.51-.26-.16-.63-.38-1.11-.66-.46-.3-.8-.6-1.02-.9-.2-.32-.39-.71-.57-1.17-.18-.48-.27-.99-.27-1.53 0-1.32.59-2.45 1.77-3.39 1.18-.94 2.84-1.41 4.98-1.41 2.68 0 4.8.88 6.36 2.64a6.53 6.53 0 011.29 2.61h-4.95c-.12-.32-.26-.57-.42-.75-.46-.5-1.12-.75-1.98-.75-1.2 0-1.8.35-1.8 1.05 0 .34.2.6.6.78.4.18 1.01.35 1.83.51 2.06.48 3.45.9 4.17 1.26 1.8.88 2.7 2.23 2.7 4.05 0 1.44-.64 2.65-1.92 3.63-1.26.98-3.07 1.47-5.43 1.47-2.9 0-5.11-.92-6.63-2.76a6.113 6.113 0 01-1.32-2.79zM174.951 19.9h5.1c.08.3.25.58.51.84.54.54 1.32.81 2.34.81 1.4 0 2.1-.35 2.1-1.05 0-.32-.2-.57-.6-.75-.4-.2-1-.4-1.8-.6-.66-.16-1.09-.26-1.29-.3-.2-.04-.62-.15-1.26-.33-.64-.2-1.1-.37-1.38-.51-.26-.16-.63-.38-1.11-.66-.46-.3-.8-.6-1.02-.9-.2-.32-.39-.71-.57-1.17-.18-.48-.27-.99-.27-1.53 0-1.32.59-2.45 1.77-3.39 1.18-.94 2.84-1.41 4.98-1.41 2.68 0 4.8.88 6.36 2.64a6.53 6.53 0 011.29 2.61h-4.95c-.12-.32-.26-.57-.42-.75-.46-.5-1.12-.75-1.98-.75-1.2 0-1.8.35-1.8 1.05 0 .34.2.6.6.78.4.18 1.01.35 1.83.51 2.06.48 3.45.9 4.17 1.26 1.8.88 2.7 2.23 2.7 4.05 0 1.44-.64 2.65-1.92 3.63-1.26.98-3.07 1.47-5.43 1.47-2.9 0-5.11-.92-6.63-2.76a6.113 6.113 0 01-1.32-2.79z" fill="#fff"/><path fill-rule="evenodd" clip-rule="evenodd" d="M6 6v18h18L6 6zM0 0v30h30V0H0z" fill="#FF6E30"/></svg><svg viewBox="0 0 16 16" id="phone" xmlns="http://www.w3.org/2000/svg"><path d="M14.675 10.817a9.536 9.536 0 01-2.942-.467.814.814 0 00-.841.2l-1.309 1.642C7.225 11.067 5.017 8.942 3.842 6.5l1.625-1.383a.85.85 0 00.2-.85A9.294 9.294 0 015.2 1.325.832.832 0 004.375.5H1.492C1.042.5.5.7.5 1.325.5 9.067 6.942 15.5 14.675 15.5c.592 0 .825-.525.825-.983v-2.875a.832.832 0 00-.825-.825z"/></svg><svg viewBox="0 0 25 25" id="search" xmlns="http://www.w3.org/2000/svg"><path d="M24.911 22.814l-5.057-4.457c1.487-1.98 2.292-4.403 2.292-6.95 0-3.05-1.156-5.909-3.245-8.065C16.812 1.186 14.03 0 11.073 0c-2.957 0-5.74 1.19-7.829 3.342C1.152 5.494 0 8.357 0 11.407c0 3.045 1.155 5.912 3.244 8.064 2.09 2.156 4.869 3.343 7.829 3.343 2.473 0 4.82-.83 6.743-2.358l5.058 4.453a.3.3 0 00.214.091.294.294 0 00.214-.091l1.61-1.654a.312.312 0 00.088-.22.319.319 0 00-.089-.221zM16.92 17.43c-1.565 1.608-3.639 2.494-5.846 2.494-2.207 0-4.282-.886-5.847-2.494a8.603 8.603 0 01-2.42-6.023c0-2.274.86-4.415 2.42-6.023 1.565-1.608 3.64-2.494 5.847-2.494 2.207 0 4.285.882 5.846 2.494a8.602 8.602 0 012.422 6.023c0 2.274-.86 4.414-2.422 6.023z"/></svg><svg viewBox="0 0 30 30" id="vk" xmlns="http://www.w3.org/2000/svg"><path d="M15 0C6.716 0 0 6.716 0 15c0 8.284 6.716 15 15 15 8.284 0 15-6.716 15-15 0-8.284-6.716-15-15-15zm7.609 16.622c.699.683 1.439 1.326 2.066 2.08.278.333.54.677.74 1.065.285.553.027 1.159-.467 1.192l-3.073-.001c-.794.066-1.426-.255-1.958-.797-.425-.433-.82-.894-1.229-1.342a2.871 2.871 0 00-.553-.492c-.42-.272-.783-.189-1.023.249-.245.445-.3.939-.324 1.434-.033.725-.252.914-.979.948-1.554.073-3.028-.163-4.398-.946-1.208-.69-2.144-1.666-2.959-2.77-1.587-2.152-2.803-4.514-3.895-6.944-.246-.547-.066-.84.538-.85a85.522 85.522 0 013.009-.002c.408.007.678.24.835.625.542 1.334 1.206 2.603 2.039 3.78.222.313.448.625.77.846.357.245.628.164.796-.233.107-.253.154-.523.177-.794.08-.927.09-1.854-.049-2.777-.086-.578-.41-.951-.987-1.06-.293-.056-.25-.165-.108-.332.248-.29.48-.47.944-.47h3.472c.547.107.67.353.744.904l.003 3.859c-.006.213.107.845.49.985.307.101.51-.145.693-.34.833-.883 1.426-1.926 1.957-3.005.235-.476.437-.969.634-1.462.146-.365.373-.545.785-.539l3.343.004c.099 0 .199.001.296.018.564.097.718.339.544.889-.275.863-.808 1.583-1.329 2.304-.558.772-1.154 1.517-1.707 2.293-.508.709-.468 1.066.163 1.681z"/></svg></svg></div>
+    <div class="header header">
+      <div class="header__container container">
+        <div class="header__logo"><a class="logo" href="#">
+          <svg class="logo__img">
+            <use xlink:href="#logo"></use>
+          </svg></a>
+        </div>
+        <nav class="header__nav">
+          <ul class="nav-list">
+            <li class="nav-list__item"><a class="nav-list__item-link" href="">О студии</a>
+            </li>
+            <li class="nav-list__item"><a class="nav-list__item-link" href="">Наши проекты</a>
+            </li>
+            <li class="nav-list__item"><a class="nav-list__item-link" href="">Услуги</a>
+            </li>
+            <li class="nav-list__item"><a class="nav-list__item-link" href="">Мастер-классы</a>
+            </li>
+            <li class="nav-list__item"><a class="nav-list__item-link" href="">Контакты</a>
+            </li>
+            <li class="nav-list__tel tel"><a class="tel__link" href="tel:+749542423532">
+              <svg class="tel__img">
+                <use xlink:href="#phone"></use>
+              </svg><span class="tel__text">+7 (495) 42-423-532</span></a>
+            </li>
+          </ul>
+        </nav>
+        <ul class="header__social-list social-list">
+          <li class="social-list__item"><a class="social-list__item-link" href="#">
+            <svg class="social-list__item-link-img">
+              <use xlink:href="#instagram"></use>
+            </svg></a>
+          </li>
+          <li class="social-list__item"><a class="social-list__item-link" href="#">
+            <svg class="social-list__item-link-img">
+              <use xlink:href="#fb"></use>
+            </svg></a>
+          </li>
+          <li class="social-list__item"><a class="social-list__item-link" href="#">
+            <svg class="social-list__item-link-img">
+              <use xlink:href="#vk"></use>
+            </svg></a>
+          </li>
+        </ul>
+        <div class="header__search">
+          <button class="btn-search">
+            <svg>
+              <use xlink:href="#search"></use>
+            </svg>
+          </button>
+          <form class="form-search" action="https://jsonplaceholder.typicode.com/posts" method="POST">
+            <input type="text" name="search" placeholder="Что будем иcкать?">
+            <button class="header__btn-close btn-close" type="button">
+              <svg>
+                <use xlink:href="#close"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
+        <div class="header__burger">
+          <button class="burger"><span class="burger__top"></span><span class="burger__middle"></span><span class="burger__bottom"></span>
+          </button>
+          <button class="header__btn-close btn-close" type="button">
+            <svg>
+              <use xlink:href="#close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <main>
+      <section class="first">
+        <h2 class="visually-hidden">section first</h2>
+        <div class="first__container container">
+          <article class="first__card-mc card-mc"><span class="card-mc__mark mark">#мастеркласс</span>
+            <p class="card-mc__author">Мастер-класс от Игоря Робова
+            </p>
+            <h3 class="card-mc__title">Неоновый фотосет 2.0
+            </h3>
+            <p class="card-mc__date">7 июля 20:00
+            </p><a class="card-mc__btn-link btn-link" href="#">Узнать больше</a>
+            <picture class="card-mc__picture picture">
+              <source srcset="images/card_mc_320.webp" type="image/webp" media="(max-width: 320px)">
+              <source srcset="images/card_mc_768.webp" type="image/webp" media="(max-width: 768px)">
+              <source srcset="images/card_mc_1024.webp" type="image/webp" media="(max-width: 1024px)">
+              <source srcset="images/card_mc_desktop.webp" type="image/webp" media="(min-width: 1024px)"><img class="picture__img" src="images/card_mc_desktop.jpg" alt="картинка" title=""/>
+            </picture>
+          </article>
+          <article class="first__previous previous">
+            <h3 class="previous__text">Работы участников предыдущего мастер-класса
+            </h3>
+            <picture class="previous__picture picture">
+              <source srcset="images/first_img_320.webp" type="image/webp" media="(max-width: 320px)">
+              <source srcset="images/first_img_768.webp" type="image/webp" media="(max-width: 768px)">
+              <source srcset="images/first_img_1024.webp" type="image/webp" media="(max-width: 1024px)">
+              <source srcset="images/first_img_desktop.webp" type="image/webp" media="(min-width: 1024px)"><img class="picture__img" src="images/first_img_desktop.jpg" alt="previous1" title=""/>
+            </picture>
+          </article>
+          <picture class="first__picture picture">
+            <source srcset="images/first_img2_320.webp" type="image/webp" media="(max-width: 320px)">
+            <source srcset="images/first_img2_768.webp" type="image/webp" media="(max-width: 768px)">
+            <source srcset="images/first_img2_1024.webp" type="image/webp" media="(max-width: 1024px)">
+            <source srcset="images/first_img2_desktop.webp" type="image/webp" media="(min-width: 1024px)"><img class="picture__img" src="images/first_img2_desktop.jpg" alt="previous1" title=""/>
+          </picture>
+          <picture class="first__picture picture">
+            <source srcset="images/first_img3_320.webp" type="image/webp" media="(max-width: 320px)">
+            <source srcset="images/first_img3_768.webp" type="image/webp" media="(max-width: 768px)">
+            <source srcset="images/first_img3_1024.webp" type="image/webp" media="(max-width: 1024px)">
+            <source srcset="images/first_img3_desktop.webp" type="image/webp" media="(min-width: 1024px)"><img class="picture__img" src="images/first_img3_desktop.jpg" alt="previous1" title=""/>
+          </picture>
+        </div>
+      </section>
+      <section class="about">
+        <div class="about__container container">
+          <h2 class="about__title section-title">О студии
+          </h2>
+          <div class="about__content">
+            <div class="about__left">
+              <p class="about__description">В рамках спецификации современных стандартов, интерактивные прототипы, инициированные исключительно синтетически, ограничены исключительно образом мышления. Предварительные выводы неутешительны: высокотехнологичная концепция общественного уклада требует от нас анализа соответствующих условий активизации! Следует отметить, что семантический разбор внешних противодействий  фиксирует необходимость распределения внутренних резервов и ресурсов. Безусловно, граница обучения кадров предоставляет широкие возможности для первоочередных требований. Повседневная практика показывает, что глубокий уровень погружения предполагает независимые способы реализации новых принципов формирования материально-технической и кадровой базы. Приятно, граждане, наблюдать, как явные признаки институционализации являются только методом политического участия и нарушающими общечеловеческие нормы этики.
+              </p>
+            </div>
+            <div class="about__right">
+              <form class="about__mailing mailing" name="mailing-form" method="POST" action="https://jsonplaceholder.typicode.com/posts">
+                <label class="mailing__label"><span class="mailing__label-desc">Подписаться на рассылку</span>
+                  <div class="mailing__email-block"><input class="mailing__input" type="email" name="mailing" placeholder="E-mail" required="required" data-validate-field="email"/>
+                  </div>
+                </label>
+                <button class="mailing__button btn-link" type="submit">Отправить
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="projects">
+        <div class="projects__container container">
+          <h2 class="projects__title section-title">Наши проекты
+          </h2>
+          <div class="projects__grid">
+            <article class="projects__card-ps card-ps">
+              <h3 class="visually-hidden">пейзаж</h3>
+              <picture class="card-ps__picture picture">
+                <source srcset="images/card-ps1_320.webp" type="image/webp" media="(max-width: 320px)">
+                <source srcset="images/card-ps1_768.webp" type="image/webp" media="(max-width: 768px)">
+                <source srcset="images/card-ps1_1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source srcset="images/card-ps1_desktop.webp" type="image/webp" media="(min-width: 1024px)"><img class="picture__img" src="images/card-ps1_desktop.jpg" alt="card-ps1" title=""/>
+              </picture><span class="card-ps__mark mark">#пейзаж</span>
+              <p class="card-ps__text">Синтетически, смешаны с не уникальными данными до степени (здесьдолжнобытьмноготочие)
+              </p>
+              <div class="card-ps__date-block">
+                <svg class="card-ps__date-img">
+                  <use xlink:href="#card-ps-date"></use>
+                </svg><span class="card-ps__date">16 июня</span>
+              </div>
+            </article>
+            <article class="projects__card-ps card-ps">
+              <h3 class="visually-hidden">портрет</h3>
+              <picture class="card-ps__picture picture">
+                <source srcset="images/card-ps2_320.webp" type="image/webp" media="(max-width: 320px)">
+                <source srcset="images/card-ps2_768.webp" type="image/webp" media="(max-width: 768px)">
+                <source srcset="images/card-ps2_1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source srcset="images/card-ps2_desktop.webp" type="image/webp" media="(min-width: 1024px)"><img class="picture__img" src="images/card-ps2_desktop.jpg" alt="card-ps2" title=""/>
+              </picture><span class="card-ps__mark mark">#портрет</span>
+              <p class="card-ps__text">В своём стремлении улучшить опыт мы упускаем, что явные (здесьдолжнобытьмноготочие)
+              </p>
+              <div class="card-ps__date-block">
+                <svg class="card-ps__date-img">
+                  <use xlink:href="#card-ps-date"></use>
+                </svg><span class="card-ps__date">16 июня</span>
+              </div>
+            </article>
+            <article class="projects__card-ps card-ps">
+              <h3 class="visually-hidden">предмет</h3>
+              <picture class="card-ps__picture picture">
+                <source srcset="images/card-ps3_320.webp" type="image/webp" media="(max-width: 320px)">
+                <source srcset="images/card-ps3_768.webp" type="image/webp" media="(max-width: 768px)">
+                <source srcset="images/card-ps3_1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source srcset="images/card-ps3_desktop.webp" type="image/webp" media="(min-width: 1024px)"><img class="picture__img" src="images/card-ps3_desktop.jpg" alt="card-ps3" title=""/>
+              </picture><span class="card-ps__mark mark">#предмет</span>
+              <p class="card-ps__text">Равным образом, высокое качество позиционных высокотехнологичная концепция общественного уклада (здесьдолжнобытьмноготочие)
+              </p>
+              <div class="card-ps__date-block">
+                <svg class="card-ps__date-img">
+                  <use xlink:href="#card-ps-date"></use>
+                </svg><span class="card-ps__date">14 мая</span>
+              </div>
+            </article>
+            <article class="projects__card-ps card-ps">
+              <h3 class="visually-hidden">ретушь</h3>
+              <picture class="card-ps__picture picture">
+                <source srcset="images/card-ps4_320.webp" type="image/webp" media="(max-width: 320px)">
+                <source srcset="images/card-ps4_768.webp" type="image/webp" media="(max-width: 768px)">
+                <source srcset="images/card-ps4_1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source srcset="images/card-ps4_desktop.webp" type="image/webp" media="(min-width: 1024px)"><img class="picture__img" src="images/card-ps4_desktop.jpg" alt="card-ps4" title=""/>
+              </picture><span class="card-ps__mark mark">#ретушь</span>
+              <p class="card-ps__text">Как принято считать, многие известные личности и по сей день остаются уделом либералов (здесьдолжнобытьмноготочие)
+              </p>
+              <div class="card-ps__date-block">
+                <svg class="card-ps__date-img">
+                  <use xlink:href="#card-ps-date"></use>
+                </svg><span class="card-ps__date">9 марта</span>
+              </div>
+            </article>
+            <article class="projects__card-ps card-ps">
+              <h3 class="visually-hidden">портрет</h3>
+              <picture class="card-ps__picture picture">
+                <source srcset="images/card-ps5_320.webp" type="image/webp" media="(max-width: 320px)">
+                <source srcset="images/card-ps5_768.webp" type="image/webp" media="(max-width: 768px)">
+                <source srcset="images/card-ps5_1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source srcset="images/card-ps5_desktop.webp" type="image/webp" media="(min-width: 1024px)"><img class="picture__img" src="images/card-ps5_desktop.jpg" alt="card-ps5" title=""/>
+              </picture><span class="card-ps__mark mark">#портрет</span>
+              <p class="card-ps__text">С учётом сложившейся международной обстановки, новая модель организационной (здесьдолжнобытьмноготочие)
+              </p>
+              <div class="card-ps__date-block">
+                <svg class="card-ps__date-img">
+                  <use xlink:href="#card-ps-date"></use>
+                </svg><span class="card-ps__date">1 марта</span>
+              </div>
+            </article>
+            <article class="projects__card-pb card-pb">
+              <picture class="card-pb__picture picture">
+                <source srcset="images/card-pb1_320.webp" type="image/webp" media="(max-width: 320px)">
+                <source srcset="images/card-pb1_768.webp" type="image/webp" media="(max-width: 768px)">
+                <source srcset="images/card-pb1_1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source srcset="images/card-pb1_desktop.webp" type="image/webp" media="(min-width: 1024px)"><img class="picture__img" src="images/card-pb1_desktop.jpg" alt="card-pb1" title=""/>
+              </picture>
+              <div class="card-pb__date-block">
+                <svg class="card-pb__date-img">
+                  <use xlink:href="#card-ps-date"></use>
+                </svg><span class="card-pb__date">9 апреля</span>
+              </div><span class="card-pb__mark mark">#fuji</span>
+              <h3 class="card-pb__title">Cемантический разбор
+              </h3>
+              <p class="card-pb__text">В рамках спецификации современных стандартов, интерактивные прототипы
+              </p>
+              <div class="card-pb__link-block"><a class="card-pb__btn-link2 btn-link2" href="#">О проекте</a>
+              </div>
+            </article>
+            <article class="projects__card-pb card-pb">
+              <picture class="card-pb__picture picture">
+                <source srcset="images/card-pb2_320.webp" type="image/webp" media="(max-width: 320px)">
+                <source srcset="images/card-pb2_768.webp" type="image/webp" media="(max-width: 768px)">
+                <source srcset="images/card-pb2_1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source srcset="images/card-pb2_desktop.webp" type="image/webp" media="(min-width: 1024px)"><img class="picture__img" src="images/card-pb2_desktop.jpg" alt="card-pb2" title=""/>
+              </picture>
+              <div class="card-pb__date-block">
+                <svg class="card-pb__date-img">
+                  <use xlink:href="#card-ps-date"></use>
+                </svg><span class="card-pb__date">20 марта</span>
+              </div><span class="card-pb__mark mark">#проектзабвение</span>
+              <h3 class="card-pb__title">Забвение
+              </h3>
+              <p class="card-pb__text">Играет важную роль в формировании глубокомысленных рассуждений
+              </p>
+              <div class="card-pb__link-block"><a class="card-pb__btn-link2 btn-link2" href="#">О проекте</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="contacts">
+        <div class="contacts__container container">
+          <h2 class="contacts__title section-title">Контакты
+          </h2>
+          <div class="contacts__grid">
+            <div class="contacts__map">
+              <div class="contacts__map-yandex map-yandex" id="mapy">
+              </div>
+              <article class="contacts__contacts-window contacts-window">
+                <h3 class="contacts-window__title">Студия “High pass”
+                </h3>
+                <address class="contacts-window__address">107045, Москва, Даев переулок, дом 41, бизнес-центр «Даев Плаза», этаж 8, офис № 82
+                </address><span class="contacts-window__tel tel"><a class="tel__link" href="tel:+749542423532">
+                <svg class="tel__img">
+                  <use xlink:href="#phone"></use>
+                </svg><span class="tel__text">+7 (495) 42-423-532</span></a></span>
+                <button class="contacts-window__btn-close btn-close" type="button">
+                  <svg>
+                    <use xlink:href="#close"></use>
+                  </svg>
+                </button>
+              </article>
+            </div>
+            <form class="contacts__request request" name="request-form" method="POST" action="https://jsonplaceholder.typicode.com/posts">
+              <h3 class="request__title">Оставить заявку
+              </h3>
+              <label class="request__lable" for="comment">Оставьте ваши данные, указав в графе “Комментарий” желаемые время и дату съемки или другого мероприятия
+              </label>
+              <div class="request__name-block"><input class="request__name" type="text" name="name" required="required" placeholder="Имя" data-validate-field="name"/>
+              </div>
+              <div class="request__email-block"><input class="request__email" type="email" name="email" required="required" placeholder="E-mail" data-validate-field="email"/>
+              </div><textarea class="request__comment" name="comment" id="comment" placeholder="Комментарий"></textarea>
+              <button class="request__button btn-link" type="submit">Отправить
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__container container">
+        <div class="footer__logo"><a class="logo" href="#">
+          <svg class="logo__img">
+            <use xlink:href="#logo"></use>
+          </svg></a><span class="footer__logo-text">Фотостудия High pass® 2018-2020</span>
+        </div>
+        <div class="footer__description"><span class="footer__description-text">Которая из моих фотографий самая любимая?</span><span class="footer__description-text">Та, которую я собираюсь снять завтра.</span><span class="footer__description-author">© Имоджен Каннингем</span>
+        </div>
+        <div class="footer__social">
+          <div class="footer__social-block"><span class="footer__social-text">Больше интересного:</span>
+            <ul class="footer__social-list social-list">
+              <li class="social-list__item"><a class="social-list__item-link" href="#">
+                <svg class="social-list__item-link-img">
+                  <use xlink:href="#instagram"></use>
+                </svg></a>
+              </li>
+              <li class="social-list__item"><a class="social-list__item-link" href="#">
+                <svg class="social-list__item-link-img">
+                  <use xlink:href="#fb"></use>
+                </svg></a>
+              </li>
+              <li class="social-list__item"><a class="social-list__item-link" href="#">
+                <svg class="social-list__item-link-img">
+                  <use xlink:href="#vk"></use>
+                </svg></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

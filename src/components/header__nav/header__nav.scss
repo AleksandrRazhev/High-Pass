@@ -1,7 +1,0 @@
-.header__nav{
-  max-width: 968px;
-  flex-grow: 1;
-  @media (max-width: 990px) {
-    @include burgerNav()
-  }
-}
