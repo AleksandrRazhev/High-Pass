@@ -17,6 +17,7 @@ const { src, dest, series, watch } = require('gulp'),
   pug = require('gulp-pug'),
   sass = require('gulp-sass')(require('dart-sass')),
   browserSync = require('browser-sync').create();
+  ghPages = require('gulp-gh-pages');
 
 const fonts = () => {
   return (src('src/**/*.ttf'))
@@ -143,6 +144,11 @@ const scripts = () => {
       .pipe(browserSync.stream());
 };
 
+const deployGhPages = () => {
+  return src('dev/**/*')
+    .pipe(ghPages());
+};
+
 const watchFiles = () => {
   browserSync.init({
     server: {
@@ -165,5 +171,6 @@ exports.clean = clean;
 exports.styles = styles;
 exports.scripts = scripts;
 exports.buildHtml = buildHtml;
+exports.deploy = deployGhPages;
 
 exports.default = series(clean, resources, fonts, svgSprites, images, scripts, compilePug, buildHtml, compileSass, styles, watchFiles);
