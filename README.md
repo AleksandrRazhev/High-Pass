@@ -1,1 +1,1 @@
-A training project using gulp, scss, pug. Currently under development
+A training project using gulp, scss, pug
